@@ -3,17 +3,22 @@ import Hero from '../components/Hero'
 import Stats from '../components/Stats'
 import Category from '../components/Category'
 import Featured from '../components/Featured'
+import WhyChooseUs from '../components/WhyChooseUs'
+import NewsLetter from '../components/NewsLetter'
+import Footer from '../components/Footer'
 function Home() {
     return (
         <>
             {/* container */}
-            <section className='bg-[#E9F1F6] mb-12'>
+            <section >
                 <Hero />
                 <Stats />
                 <Category />
                 <Featured />
-
-            </section>
+                <WhyChooseUs />
+                <NewsLetter />
+                <Footer />
+            </section >
 
         </>
     )
