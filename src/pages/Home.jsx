@@ -5,7 +5,7 @@ import Category from '../components/Category'
 import Featured from '../components/Featured'
 import WhyChooseUs from '../components/WhyChooseUs'
 import NewsLetter from '../components/NewsLetter'
-import Footer from '../components/Footer'
+
 function Home() {
     return (
         <>
@@ -17,7 +17,7 @@ function Home() {
                 <Featured />
                 <WhyChooseUs />
                 <NewsLetter />
-                <Footer />
+
             </section >
 
         </>

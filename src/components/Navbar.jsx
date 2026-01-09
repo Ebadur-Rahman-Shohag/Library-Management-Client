@@ -1,9 +1,9 @@
 import React from "react";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 function Navbar() {
     return (
         <>
-            <nav className="flex justify-between items-center bg-[#F5F9FB] text-black px-12 py-4 border-b border-b-gray-200">
+            <nav className="flex justify-between items-center bg-[#F6F9FB] text-black px-12 py-4 border-b border-b-gray-200 sticky top-0 z-50">
                 {/* Website name/logo,  */}
                 <div className="flex gap-4 items-center">
                     <span>
@@ -20,8 +20,8 @@ function Navbar() {
                 </div>
                 {/* login and register */}
                 <div className="flex gap-6 items-center font-semibold text-lg">
-                    <button>Register</button>
-                    <button>Login</button>
+                    <Link to="/login">Login</Link>
+                    <Link className="bg-[#005B9F] text-white px-4 py-2 rounded-xl" to="/register">Register</Link>
                 </div>
             </nav>
         </>
