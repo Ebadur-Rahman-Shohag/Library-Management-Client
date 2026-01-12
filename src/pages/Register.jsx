@@ -1,31 +1,41 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router'
-
+import { useContext } from 'react'
+import AuthContext from '../context/AuthContect'
+import { useNavigate } from 'react-router'
 function Register() {
-    const [formData, setFormData] = useState({
-        fullName: '',
-        email: '',
-        photoURL: '',
-        password: ''
-    })
     const [showPassword, setShowPassword] = useState(false)
+    const { registerUser } = useContext(AuthContext)
+    const navigate = useNavigate()
 
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        })
-    }
-
-    const handleSubmit = (e) => {
+    const handleRegister = (e) => {
         e.preventDefault()
         // Handle registration logic here
-        console.log('Register:', formData)
+        const fullName = e.target.fullName.value
+        const email = e.target.email.value
+        const photoURL = e.target.photoURL.value
+        const password = e.target.password.value
+
+        registerUser(email, password)
+            .then((userCredential) => {
+                const user = userCredential.user
+                console.log(user)
+            })
+            .catch((error) => {
+                const errorCode = error.code
+                const errorMessage = error.message
+                console.log(errorCode, errorMessage)
+            })
+            .finally(() => {
+                e.target.reset()
+            })
+        navigate('/login')
+
     }
 
     return (
         <section className='min-h-screen flex items-center justify-center bg-gray-50'>
-            <div className='bg-white rounded-2xl shadow-xl w-full max-w-md p-8'>
+            <div className='bg-white rounded-2xl shadow-xl w-full max-w-lg p-8'>
                 {/* Logo */}
                 <div className='flex justify-center mb-6'>
                     <div className='bg-[#005B9F] text-white p-4 rounded-2xl'>
@@ -40,7 +50,7 @@ function Register() {
                 </div>
 
                 {/* Registration Form */}
-                <form onSubmit={handleSubmit} className='space-y-5'>
+                <form onSubmit={handleRegister} className='space-y-5'>
                     {/* Full Name Field */}
                     <div>
                         <label htmlFor='fullName' className='block text-sm font-semibold text-gray-900 mb-2'>
@@ -54,8 +64,6 @@ function Register() {
                                 type='text'
                                 id='fullName'
                                 name='fullName'
-                                value={formData.fullName}
-                                onChange={handleChange}
                                 placeholder='Enter your full name'
                                 className='w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#005B9F] focus:border-transparent transition duration-200'
                                 required
@@ -76,8 +84,6 @@ function Register() {
                                 type='email'
                                 id='email'
                                 name='email'
-                                value={formData.email}
-                                onChange={handleChange}
                                 placeholder='Enter your email'
                                 className='w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#005B9F] focus:border-transparent transition duration-200'
                                 required
@@ -98,8 +104,6 @@ function Register() {
                                 type='url'
                                 id='photoURL'
                                 name='photoURL'
-                                value={formData.photoURL}
-                                onChange={handleChange}
                                 placeholder='Enter your photo URL'
                                 className='w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#005B9F] focus:border-transparent transition duration-200'
                             />
@@ -119,8 +123,6 @@ function Register() {
                                 type={showPassword ? 'text' : 'password'}
                                 id='password'
                                 name='password'
-                                value={formData.password}
-                                onChange={handleChange}
                                 placeholder='Create a password'
                                 className='w-full pl-12 pr-12 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#005B9F] focus:border-transparent transition duration-200'
                                 required

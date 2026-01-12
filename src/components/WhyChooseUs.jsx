@@ -10,7 +10,7 @@ function WhyChooseUs() {
                     <div className='grid grid-cols-3 grid-rows-2 gap-12 mt-12'>
                         <div className='flex gap-4'>
                             <div className='p-4 h-12 w-12 bg-[#DFE9F1] rounded-lg flex justify-center items-center'>
-                                <i class="fa-solid fa-layer-group text-2xl text-blue-400"></i>
+                                <i className="fa-solid fa-layer-group text-2xl text-blue-400"></i>
                             </div>
                             <div className='space-y-2'>
                                 <h1 className='text-xl font-bold'>Vast Collection</h1>
@@ -20,7 +20,7 @@ function WhyChooseUs() {
                         <div className='flex gap-4'>
                             <div className='p-4 h-12 w-12 bg-[#DFE9F1] rounded-lg flex justify-center items-center'>
 
-                                <i class="fa-solid fa-infinity text-2xl text-blue-400"></i>
+                                <i className="fa-solid fa-infinity text-2xl text-blue-400"></i>
                             </div>
                             <div className='space-y-2'>
                                 <h1 className='text-xl font-bold'>Unlimited Access</h1>
@@ -30,7 +30,7 @@ function WhyChooseUs() {
                         <div className='flex gap-4'>
                             <div className='p-4 h-12 w-12 bg-[#DFE9F1] rounded-lg flex justify-center items-center'>
 
-                                <i class="fa-solid fa-shield-halved text-2xl text-blue-400"></i>
+                                <i className="fa-solid fa-shield-halved text-2xl text-blue-400"></i>
                             </div>
                             <div className='space-y-2'>
                                 <h1 className='text-xl font-bold'>Secure System</h1>
@@ -40,7 +40,7 @@ function WhyChooseUs() {
                         <div className='flex gap-4'>
                             <div className='p-4 h-12 w-12 bg-[#DFE9F1] rounded-lg flex justify-center items-center'>
 
-                                <i class="fa-solid fa-rotate-left text-2xl text-blue-400"></i>
+                                <i className="fa-solid fa-rotate-left text-2xl text-blue-400"></i>
                             </div>
                             <div className='space-y-2'>
                                 <h1 className='text-2xl font-bold'>Easy Returns</h1>
@@ -50,7 +50,7 @@ function WhyChooseUs() {
                         <div className='flex gap-4'>
                             <div className='p-4 h-12 w-12 bg-[#DFE9F1] rounded-lg flex justify-center items-center'>
 
-                                <i class="fa-solid fa-lightbulb text-2xl text-blue-400"></i>
+                                <i className="fa-solid fa-lightbulb text-2xl text-blue-400"></i>
                             </div>
                             <div className='space-y-2'>
                                 <h1 className='text-xl font-bold'>Recommendations</h1>
@@ -60,7 +60,7 @@ function WhyChooseUs() {
                         <div className='flex gap-4'>
                             <div className='p-4 h-12 w-12 bg-[#DFE9F1] rounded-lg flex justify-center items-center'>
 
-                                <i class="fa-solid fa-users text-2xl text-blue-400"></i>
+                                <i className="fa-solid fa-users text-2xl text-blue-400"></i>
                             </div>
                             <div className='space-y-2'>
                                 <h1 className='text-xl font-bold'>Community</h1>

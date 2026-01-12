@@ -1,16 +1,34 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router'
-
+import { useContext } from 'react'
+import AuthContext from '../context/AuthContect'
+import { useNavigate } from 'react-router'
 function Login() {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+
     const [rememberMe, setRememberMe] = useState(false)
     const [showPassword, setShowPassword] = useState(false)
+    const { loginUser } = useContext(AuthContext)
+    const navigate = useNavigate()
 
-    const handleSubmit = (e) => {
+    const handleLogin = (e) => {
         e.preventDefault()
         // Handle login logic here
-        console.log('Login:', { email, password, rememberMe })
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        loginUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+            })
+            .catch(error => {
+                console.error(error)
+            })
+            .finally(() => {
+                e.target.reset()
+            })
+        navigate('/')
     }
 
     const handleGoogleSignIn = () => {
@@ -20,7 +38,7 @@ function Login() {
 
     return (
         <section className='min-h-screen flex items-center justify-center bg-gray-50'>
-            <div className='bg-white rounded-2xl shadow-xl w-full max-w-md p-8'>
+            <div className='bg-white rounded-2xl shadow-xl w-full max-w-lg p-8'>
                 {/* Logo */}
                 <div className='flex justify-center mb-6'>
                     <div className='bg-[#005B9F] text-white p-4 rounded-2xl'>
@@ -35,7 +53,7 @@ function Login() {
                 </div>
 
                 {/* Login Form */}
-                <form onSubmit={handleSubmit} className='space-y-5'>
+                <form onSubmit={handleLogin} className='space-y-5'>
                     {/* Email Field */}
                     <div>
                         <label htmlFor='email' className='block text-sm font-semibold text-gray-900 mb-2'>
@@ -48,8 +66,7 @@ function Login() {
                             <input
                                 type='email'
                                 id='email'
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
+                                name='email'
                                 placeholder='Enter your email'
                                 className='w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#005B9F] focus:border-transparent transition duration-200'
                                 required
@@ -69,8 +86,7 @@ function Login() {
                             <input
                                 type={showPassword ? 'text' : 'password'}
                                 id='password'
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
+                                name='password'
                                 placeholder='Enter your password'
                                 className='w-full pl-12 pr-12 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#005B9F] focus:border-transparent transition duration-200'
                                 required

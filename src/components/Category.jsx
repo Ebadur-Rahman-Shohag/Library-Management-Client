@@ -10,7 +10,7 @@ function Category() {
                         {/* card - 1 */}
                         <div className='flex items-center justify-center border-3 border-gray-300 shadow-lg bg-white px-16 py-12 rounded-lg hover:shadow-xl transition duration-300 ease-in-out'>
                             <div className='flex flex-col gap-3 items-center justify-center'>
-                                <i class="fa-solid fa-book text-2xl"></i>
+                                <i className="fa-solid fa-book text-2xl"></i>
                                 <h1 className='text-2xl font-bold'>Novel</h1>
                                 <p className='text-lg text-center'>Novel books for adults and children</p>
                                 <button className='bg-[#F5F9FB] text-black font-semibold px-8 py-2 border border-black rounded-lg hover:bg-black hover:text-white transition duration-300 ease-in-out'>View All</button>
@@ -19,7 +19,7 @@ function Category() {
                         {/* card - 2 */}
                         <div className='flex items-center justify-center border-3 border-gray-300 shadow-lg bg-white px-16 py-12 rounded-lg hover:shadow-xl transition duration-300 ease-in-out'>
                             <div className='flex flex-col gap-3 items-center justify-center'>
-                                <i class="fa-solid fa-user-pen text-2xl"></i>
+                                <i className="fa-solid fa-user-pen text-2xl"></i>
                                 <h1 className='text-2xl font-bold'>Biography</h1>
                                 <p className='text-lg text-center'>True stories of real people</p>
                                 <button className='bg-[#F5F9FB] text-black font-semibold px-8 py-2 border border-black rounded-lg hover:bg-black hover:text-white transition duration-300 ease-in-out'>View All</button>
@@ -28,7 +28,7 @@ function Category() {
                         {/* card - 3 */}
                         <div className='flex items-center justify-center border-3 border-gray-300 shadow-lg bg-white px-16 py-12 rounded-lg hover:shadow-xl transition duration-300 ease-in-out'>
                             <div className='flex flex-col gap-3 items-center justify-center'>
-                                <i class="fa-solid fa-graduation-cap text-2xl"></i>
+                                <i className="fa-solid fa-graduation-cap text-2xl"></i>
                                 <h1 className='text-2xl font-bold'>Non-Fiction</h1>
                                 <p className='text-lg text-center'>Non-fiction books</p>
                                 <button className='bg-[#F5F9FB] text-black font-semibold px-8 py-2 border border-black rounded-lg hover:bg-black hover:text-white transition duration-300 ease-in-out'  >View All</button>
@@ -37,7 +37,7 @@ function Category() {
                         {/* card - 4 */}
                         <div className='flex items-center justify-center border-3 border-gray-300 shadow-lg bg-white px-16 py-12 rounded-lg hover:shadow-xl transition duration-300 ease-in-out'>
                             <div className='flex flex-col gap-3 items-center justify-center'>
-                                <i class="fa-solid fa-child text-2xl"></i>
+                                <i className="fa-solid fa-child text-2xl"></i>
                                 <h1 className='text-2xl font-bold'>Children's</h1>
                                 <p className='text-lg text-center'>Books for children</p>
                                 <button className='bg-[#F5F9FB] text-black font-semibold px-8 py-2 border border-black rounded-lg hover:bg-black hover:text-white transition duration-300 ease-in-out'  >View All</button>

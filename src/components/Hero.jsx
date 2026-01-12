@@ -8,7 +8,7 @@ function Hero() {
                 <div className=' flex justify-between items-center container mx-auto py-20'>
                     {/* left side */}
                     <div className='w-1/2 space-y-4'>
-                        <h3 className='flex gap-2 items-center font-semibold text-lg'><span><i class="fa-solid fa-book-open-reader text-2xl"></i></span> <span>Explore thousands of books across every genre</span></h3>
+                        <h3 className='flex gap-2 items-center font-semibold text-lg'><span><i className="fa-solid fa-book-open-reader text-2xl"></i></span> <span>Explore thousands of books across every genre</span></h3>
                         <h1 className='text-4xl font-bold'>Find your next favorite book</h1>
                         <p className='text-lg'>Discover new books and authors, and find the perfect read for every mood and occasion.</p>
                         <div className='flex gap-4 items-center'>

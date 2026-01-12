@@ -17,7 +17,6 @@ function Home() {
                 <Featured />
                 <WhyChooseUs />
                 <NewsLetter />
-
             </section >
 
         </>

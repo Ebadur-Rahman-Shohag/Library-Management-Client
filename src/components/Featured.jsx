@@ -17,7 +17,7 @@ function Featured() {
                                 <h1 className='text-2xl font-bold'>The Great Gatsby</h1>
                                 <p className='text-lg'>Author: F. Scott Fitzgerald</p>
                                 <div className='flex gap-4 items-center'>
-                                    <p className='text-lg'> <i class="fa-solid fa-star"></i> Rating: 4.5</p>
+                                    <p className='text-lg'> <i className="fa-solid fa-star"></i> Rating: 4.5</p>
                                     <p className='text-lg'>5 available</p>
                                 </div>
                                 <div className='flex gap-4 items-center'>
@@ -33,7 +33,7 @@ function Featured() {
                                 <h1 className='text-2xl font-bold'>The Great Gatsby</h1>
                                 <p className='text-lg'>Author: F. Scott Fitzgerald</p>
                                 <div className='flex gap-4 items-center'>
-                                    <p className='text-lg'> <i class="fa-solid fa-star"></i> Rating: 4.5</p>
+                                    <p className='text-lg'> <i className="fa-solid fa-star"></i> Rating: 4.5</p>
                                     <p className='text-lg'>5 available</p>
                                 </div>
                                 <div className='flex gap-4 items-center'>
@@ -49,7 +49,7 @@ function Featured() {
                                 <h1 className='text-2xl font-bold'>The Great Gatsby</h1>
                                 <p className='text-lg'>Author: F. Scott Fitzgerald</p>
                                 <div className='flex gap-4 items-center'>
-                                    <p className='text-lg'> <i class="fa-solid fa-star"></i> Rating: 4.5</p>
+                                    <p className='text-lg'> <i className="fa-solid fa-star"></i> Rating: 4.5</p>
                                     <p className='text-lg'>5 available</p>
                                 </div>
                                 <div className='flex gap-4 items-center'>
@@ -65,7 +65,7 @@ function Featured() {
                                 <h1 className='text-2xl font-bold'>The Great Gatsby</h1>
                                 <p className='text-lg'>Author: F. Scott Fitzgerald</p>
                                 <div className='flex gap-4 items-center'>
-                                    <p className='text-lg'> <i class="fa-solid fa-star"></i> Rating: 4.5</p>
+                                    <p className='text-lg'> <i className="fa-solid fa-star"></i> Rating: 4.5</p>
                                     <p className='text-lg'>5 available</p>
                                 </div>
                                 <div className='flex gap-4 items-center'>
