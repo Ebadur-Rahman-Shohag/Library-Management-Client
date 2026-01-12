@@ -5,7 +5,7 @@ import AuthContext from '../context/AuthContect'
 import { useNavigate } from 'react-router'
 function Register() {
     const [showPassword, setShowPassword] = useState(false)
-    const { registerUser } = useContext(AuthContext)
+    const { registerUser, setLoading, updateUserProfile } = useContext(AuthContext)
     const navigate = useNavigate()
 
     const handleRegister = (e) => {
@@ -16,10 +16,16 @@ function Register() {
         const photoURL = e.target.photoURL.value
         const password = e.target.password.value
 
+        const profile = {
+            displayName: fullName,
+            photoURL: photoURL
+        }
         registerUser(email, password)
             .then((userCredential) => {
                 const user = userCredential.user
                 console.log(user)
+                updateUserProfile(profile)
+                navigate('/login')
             })
             .catch((error) => {
                 const errorCode = error.code
@@ -29,7 +35,7 @@ function Register() {
             .finally(() => {
                 e.target.reset()
             })
-        navigate('/login')
+
 
     }
 

@@ -7,7 +7,7 @@ function Login() {
 
     const [rememberMe, setRememberMe] = useState(false)
     const [showPassword, setShowPassword] = useState(false)
-    const { loginUser } = useContext(AuthContext)
+    const { loginUser, loginWithGoogle } = useContext(AuthContext)
     const navigate = useNavigate()
 
     const handleLogin = (e) => {
@@ -17,10 +17,15 @@ function Login() {
         const email = form.email.value;
         const password = form.password.value;
 
+
         loginUser(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user)
+                updateUserProfile({
+                    displayName: email
+                })
+                navigate('/')
             })
             .catch(error => {
                 console.error(error)
@@ -28,12 +33,23 @@ function Login() {
             .finally(() => {
                 e.target.reset()
             })
-        navigate('/')
+
     }
 
     const handleGoogleSignIn = () => {
         // Handle Google sign-in logic
-        console.log('Google sign-in')
+        loginWithGoogle()
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                navigate('/')
+            })
+            .catch(error => {
+                console.error(error)
+            })
+            .finally(() => {
+
+            })
     }
 
     return (
