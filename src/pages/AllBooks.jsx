@@ -144,12 +144,12 @@ function AllBooks() {
                                     </div>
 
                                     <div className="pt-3 flex gap-2">
-                                        <button className="flex-1 btn btn-sm bg-gray-50 hover:bg-gray-100 border-gray-200 text-gray-700 font-medium normal-case">
+                                        <Link to={`/book/${book.id}`} className="flex-1 btn btn-sm bg-gray-50 hover:bg-gray-100 border-gray-200 text-gray-700 font-medium normal-case">
                                             Details
-                                        </button>
-                                        <button className="flex-1 btn btn-sm bg-[#1B3764] hover:bg-[#152b4d] text-white border-none font-medium normal-case">
+                                        </Link>
+                                        <Link to={`/update-book/${book.id}`} className="flex-1 btn btn-sm bg-[#1B3764] hover:bg-[#152b4d] text-white border-none font-medium normal-case">
                                             Update
-                                        </button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -195,8 +195,8 @@ function AllBooks() {
                                         </td>
                                         <td className="text-sm font-medium text-gray-600">{book.quantity}</td>
                                         <td className="text-right">
-                                            <button className="btn btn-ghost btn-xs">Details</button>
-                                            <button className="btn btn-ghost btn-xs text-blue-600">Update</button>
+                                            <Link to={`/book/${book.id}`} className="btn btn-ghost btn-xs">Details</Link>
+                                            <Link to={`/update-book/${book.id}`} className="btn btn-ghost btn-xs text-blue-600">Update</Link>
                                         </td>
                                     </tr>
                                 ))}
