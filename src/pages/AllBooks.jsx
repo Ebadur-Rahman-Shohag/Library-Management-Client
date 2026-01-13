@@ -1,48 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router";
+import { useLoaderData } from "react-router";
 
 function AllBooks() {
     const [viewType, setViewType] = useState("card"); // 'card' or 'table'
 
     // Mock data for UI visualization
-    const books = [
-        {
-            id: 1,
-            title: "The Great Gatsby",
-            author: "F. Scott Fitzgerald",
-            category: "Classic",
-            rating: 4.8,
-            quantity: 12,
-            image: "https://upload.wikimedia.org/wikipedia/commons/7/7a/The_Great_Gatsby_Cover_1925_Retouched.jpg",
-        },
-        {
-            id: 2,
-            title: "To Kill a Mockingbird",
-            author: "Harper Lee",
-            category: "Classic",
-            rating: 4.9,
-            quantity: 8,
-            image: "https://upload.wikimedia.org/wikipedia/commons/4/4f/To_Kill_a_Mockingbird_%28first_edition_cover%29.jpg",
-        },
-        {
-            id: 3,
-            title: "The Hobbit",
-            author: "J.R.R. Tolkien",
-            category: "Fantasy",
-            rating: 4.7,
-            quantity: 15,
-            image: "https://upload.wikimedia.org/wikipedia/en/4/4a/TheHobbit_FirstEdition.jpg",
-        },
-        {
-            id: 4,
-            title: "Pride and Prejudice",
-            author: "Jane Austen",
-            category: "Romance",
-            rating: 4.6,
-            quantity: 10,
-            image: "https://upload.wikimedia.org/wikipedia/commons/1/17/PrideAndPrejudiceTitlePage.jpg"
-        }
-    ];
+    const books = useLoaderData();
+    console.log(books);
+
 
     return (
         <div className="min-h-screen bg-[#F6F9FB] py-10 px-4">
@@ -144,7 +110,7 @@ function AllBooks() {
                                     </div>
 
                                     <div className="pt-3 flex gap-2">
-                                        <Link to={`/book/${book.id}`} className="flex-1 btn btn-sm bg-gray-50 hover:bg-gray-100 border-gray-200 text-gray-700 font-medium normal-case">
+                                        <Link to={`/book/${book._id}`} className="flex-1 btn btn-sm bg-gray-50 hover:bg-gray-100 border-gray-200 text-gray-700 font-medium normal-case">
                                             Details
                                         </Link>
                                         <Link to={`/update-book/${book.id}`} className="flex-1 btn btn-sm bg-[#1B3764] hover:bg-[#152b4d] text-white border-none font-medium normal-case">

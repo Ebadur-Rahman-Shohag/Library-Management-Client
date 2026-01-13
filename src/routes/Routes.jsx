@@ -22,6 +22,11 @@ const router = createBrowserRouter([
             {
                 path: "all-books",
                 element: <AllBooks />,
+                loader: async () => {
+                    const response = await fetch("http://localhost:5000/api/v1/books");
+                    const data = await response.json();
+                    return data;
+                },
             },
             {
                 path: "add-book",
@@ -42,10 +47,16 @@ const router = createBrowserRouter([
             {
                 path: "book/:id",
                 element: <ProtectedRoute><SinglePage /></ProtectedRoute>,
+                loader: async ({ params }) => {
+                    const response = await fetch(`http://localhost:5000/api/v1/books/${params.id}`);
+                    const data = await response.json();
+                    return data;
+                },
             },
             {
                 path: "update-book/:id",
                 element: <ProtectedRoute><UpdatePage /></ProtectedRoute>,
+
             }
         ],
     },
